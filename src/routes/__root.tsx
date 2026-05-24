@@ -134,6 +134,9 @@ function RootComponent() {
             <Link to="/palavra" activeProps={{ className: "text-foreground font-semibold" }}>
               Palavra
             </Link>
+            <Link to="/qr-pix" activeProps={{ className: "text-foreground font-semibold" }}>
+              QR Pix
+            </Link>
           </nav>
         </header>
         <Outlet />
