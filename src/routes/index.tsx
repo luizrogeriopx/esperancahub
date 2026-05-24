@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -15,6 +16,14 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const [bairro, setBairro] = useState("");
+  const [nome, setNome] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setNome(bairro.trim());
+  };
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-background px-6">
       <div className="flex flex-col items-center leading-none tracking-tight text-foreground">
@@ -32,10 +41,34 @@ function Index() {
             ESPERANÇA
           </span>
         </h1>
-        <p className="mt-10 text-xs uppercase tracking-[0.4em] text-muted-foreground">
-          Esperança Hub
-        </p>
+        {nome && (
+          <p
+            className="mt-6 text-2xl sm:text-4xl md:text-5xl uppercase text-foreground"
+            style={{ fontFamily: '"Nexa Book", sans-serif', letterSpacing: "0.25em" }}
+          >
+            {nome}
+          </p>
+        )}
       </div>
+
+      <form
+        onSubmit={handleSubmit}
+        className="mt-16 flex w-full max-w-md flex-col gap-3 sm:flex-row"
+      >
+        <input
+          type="text"
+          value={bairro}
+          onChange={(e) => setBairro(e.target.value)}
+          placeholder="Digite o nome do bairro"
+          className="flex-1 rounded-md border border-input bg-background px-4 py-3 text-sm text-foreground outline-none focus:ring-2 focus:ring-ring"
+        />
+        <button
+          type="submit"
+          className="rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+        >
+          Aplicar
+        </button>
+      </form>
     </main>
   );
 }
