@@ -117,12 +117,12 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="min-h-screen bg-background">
-        <header className="flex items-center justify-between border-b border-border px-6 py-4">
+      <div className="min-h-screen overflow-x-hidden bg-background">
+        <header className="flex flex-col gap-3 border-b border-border px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
           <Link to="/" className="text-sm font-semibold tracking-[0.2em] uppercase text-foreground">
             Esperança Hub
           </Link>
-          <nav className="flex items-center gap-6 text-xs uppercase tracking-[0.2em] text-foreground/70">
+          <nav className="-mx-4 flex items-center gap-4 overflow-x-auto px-4 text-xs uppercase tracking-[0.2em] text-foreground/70 sm:mx-0 sm:gap-6 sm:px-0 sm:overflow-visible whitespace-nowrap">
             <Link to="/" activeOptions={{ exact: true }} activeProps={{ className: "text-foreground font-semibold" }}>
               Início
             </Link>
