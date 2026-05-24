@@ -34,6 +34,7 @@ function Index() {
       pixelRatio: 6,
       backgroundColor: undefined,
       cacheBust: true,
+      style: { background: "transparent", backgroundImage: "none" },
     });
     const link = document.createElement("a");
     link.download = `${filename}.png`;
