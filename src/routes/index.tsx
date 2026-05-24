@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { toPng } from "html-to-image";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -20,6 +21,26 @@ function Index() {
   const [nome, setNome] = useState("");
   const [cor, setCor] = useState("#000000");
 
+  const ref1 = useRef<HTMLDivElement>(null);
+  const ref2 = useRef<HTMLDivElement>(null);
+  const ref3 = useRef<HTMLDivElement>(null);
+
+  const baixar = async (
+    node: HTMLDivElement | null,
+    filename: string,
+  ) => {
+    if (!node) return;
+    const dataUrl = await toPng(node, {
+      pixelRatio: 6,
+      backgroundColor: undefined,
+      cacheBust: true,
+    });
+    const link = document.createElement("a");
+    link.download = `${filename}.png`;
+    link.href = dataUrl;
+    link.click();
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setNome(bairro.trim());
@@ -33,7 +54,7 @@ function Index() {
           <span className="mb-3 text-xs uppercase tracking-[0.3em] text-foreground/50">
             Versão 1 — Centralizada
           </span>
-          <div className="flex flex-col items-center w-fit">
+          <div ref={ref1} className="flex flex-col items-center w-fit p-4">
           <h2 className="flex flex-col items-center">
             <span
               className="text-4xl sm:text-6xl md:text-7xl"
@@ -54,6 +75,13 @@ function Index() {
             </p>
           )}
           </div>
+          <button
+            type="button"
+            onClick={() => baixar(ref1.current, `igreja-esperanca-v1${nome ? "-" + nome.toLowerCase().replace(/\s+/g, "-") : ""}`)}
+            className="mt-4 rounded-md border border-input bg-background px-4 py-2 text-xs font-medium text-foreground transition-colors hover:bg-accent"
+          >
+            Baixar PNG (alta resolução, fundo transparente)
+          </button>
         </section>
 
         {/* Versão 2 — Alinhada à esquerda */}
@@ -61,6 +89,7 @@ function Index() {
           <span className="mb-3 text-xs uppercase tracking-[0.3em] text-foreground/50">
             Versão 2 — Alinhada à esquerda
           </span>
+          <div ref={ref2} className="p-4">
           <h2 className="flex flex-col items-start">
             <span
               className="text-4xl sm:text-6xl md:text-7xl"
@@ -80,6 +109,14 @@ function Index() {
               {nome}
             </p>
           )}
+          </div>
+          <button
+            type="button"
+            onClick={() => baixar(ref2.current, `igreja-esperanca-v2${nome ? "-" + nome.toLowerCase().replace(/\s+/g, "-") : ""}`)}
+            className="mt-4 rounded-md border border-input bg-background px-4 py-2 text-xs font-medium text-foreground transition-colors hover:bg-accent"
+          >
+            Baixar PNG (alta resolução, fundo transparente)
+          </button>
         </section>
 
         {/* Versão 3 — Mesma linha */}
@@ -87,7 +124,7 @@ function Index() {
           <span className="mb-3 text-xs uppercase tracking-[0.3em] text-foreground/50">
             Versão 3 — Mesma linha
           </span>
-          <div className="flex flex-col items-center w-fit">
+          <div ref={ref3} className="flex flex-col items-center w-fit p-4">
           <h2 className="flex flex-wrap items-baseline gap-x-3 text-4xl sm:text-6xl md:text-7xl">
             <span
               style={{ fontFamily: '"Nexa Book", sans-serif', letterSpacing: "0.08em" }}
@@ -106,6 +143,13 @@ function Index() {
             </p>
           )}
           </div>
+          <button
+            type="button"
+            onClick={() => baixar(ref3.current, `igreja-esperanca-v3${nome ? "-" + nome.toLowerCase().replace(/\s+/g, "-") : ""}`)}
+            className="mt-4 rounded-md border border-input bg-background px-4 py-2 text-xs font-medium text-foreground transition-colors hover:bg-accent"
+          >
+            Baixar PNG (alta resolução, fundo transparente)
+          </button>
         </section>
       </div>
 
