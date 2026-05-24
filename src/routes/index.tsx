@@ -25,10 +25,10 @@ function Index() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center bg-background px-6 py-16">
+    <main className="flex min-h-screen flex-col items-start bg-background px-6 py-16">
       <div className="flex w-full max-w-5xl flex-col gap-16 text-foreground">
         {/* Versão 1 — Centralizada */}
-        <section className="flex flex-col items-center text-center leading-none">
+        <section className="flex flex-col items-start text-left leading-none">
           <span className="mb-3 text-xs uppercase tracking-[0.3em] text-foreground/50">
             Versão 1 — Centralizada
           </span>
@@ -80,7 +80,7 @@ function Index() {
         </section>
 
         {/* Versão 3 — Mesma linha */}
-        <section className="flex flex-col items-center text-center leading-none">
+        <section className="flex flex-col items-start text-left leading-none">
           <span className="mb-3 text-xs uppercase tracking-[0.3em] text-foreground/50">
             Versão 3 — Mesma linha
           </span>
