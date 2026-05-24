@@ -32,6 +32,7 @@ function Index() {
           <span className="mb-3 text-xs uppercase tracking-[0.3em] text-foreground/50">
             Versão 1 — Centralizada
           </span>
+          <div className="flex flex-col items-center w-fit">
           <h2 className="flex flex-col items-center">
             <span
               className="text-4xl sm:text-6xl md:text-7xl"
@@ -47,10 +48,11 @@ function Index() {
             </span>
           </h2>
           {nome && (
-            <p className="mt-3 self-center text-base sm:text-lg uppercase tracking-[0.2em] text-foreground/90">
+            <p className="mt-3 text-base sm:text-lg uppercase tracking-[0.2em] text-foreground/90">
               {nome}
             </p>
           )}
+          </div>
         </section>
 
         {/* Versão 2 — Alinhada à esquerda */}
@@ -84,6 +86,7 @@ function Index() {
           <span className="mb-3 text-xs uppercase tracking-[0.3em] text-foreground/50">
             Versão 3 — Mesma linha
           </span>
+          <div className="flex flex-col items-center w-fit">
           <h2 className="flex flex-wrap items-baseline gap-x-3 text-4xl sm:text-6xl md:text-7xl">
             <span
               style={{ fontFamily: '"Nexa Book", sans-serif', letterSpacing: "0.08em" }}
@@ -97,10 +100,11 @@ function Index() {
             </span>
           </h2>
           {nome && (
-            <p className="mt-3 self-center text-base sm:text-lg uppercase tracking-[0.2em] text-foreground/90">
+            <p className="mt-3 text-base sm:text-lg uppercase tracking-[0.2em] text-foreground/90">
               {nome}
             </p>
           )}
+          </div>
         </section>
       </div>
 
