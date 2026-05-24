@@ -35,12 +35,12 @@ function Fontes() {
     <main className="flex min-h-[calc(100vh-65px)] flex-col items-start bg-background px-6 py-16">
       <div className="w-full max-w-5xl">
         <p
-          className="text-base sm:text-lg uppercase tracking-[0.2em] text-foreground/70"
+          className="text-base sm:text-lg uppercase tracking-[0.2em] text-neutral-500"
           style={{ fontFamily: '"Nexa Book", sans-serif' }}
         >
           Baixe individualmente as fontes oficiais da{" "}
-          <span style={{ fontFamily: '"Nexa Book", sans-serif' }}>IGREJA</span>{" "}
-          <span style={{ fontFamily: '"Nexa Heavy", sans-serif' }}>ESPERANÇA</span>
+          <span className="text-black" style={{ fontFamily: '"Nexa Book", sans-serif' }}>IGREJA</span>{" "}
+          <span className="text-black" style={{ fontFamily: '"Nexa Heavy", sans-serif' }}>ESPERANÇA</span>
         </p>
 
         <div className="mt-16 flex flex-col gap-16">
