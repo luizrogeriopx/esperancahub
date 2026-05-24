@@ -9,11 +9,17 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as PalavraRouteImport } from './routes/palavra'
 import { Route as LogomarcaRouteImport } from './routes/logomarca'
 import { Route as HorasRouteImport } from './routes/horas'
 import { Route as FontesRouteImport } from './routes/fontes'
 import { Route as IndexRouteImport } from './routes/index'
 
+const PalavraRoute = PalavraRouteImport.update({
+  id: '/palavra',
+  path: '/palavra',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LogomarcaRoute = LogomarcaRouteImport.update({
   id: '/logomarca',
   path: '/logomarca',
@@ -40,12 +46,14 @@ export interface FileRoutesByFullPath {
   '/fontes': typeof FontesRoute
   '/horas': typeof HorasRoute
   '/logomarca': typeof LogomarcaRoute
+  '/palavra': typeof PalavraRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/fontes': typeof FontesRoute
   '/horas': typeof HorasRoute
   '/logomarca': typeof LogomarcaRoute
+  '/palavra': typeof PalavraRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -53,13 +61,14 @@ export interface FileRoutesById {
   '/fontes': typeof FontesRoute
   '/horas': typeof HorasRoute
   '/logomarca': typeof LogomarcaRoute
+  '/palavra': typeof PalavraRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/fontes' | '/horas' | '/logomarca'
+  fullPaths: '/' | '/fontes' | '/horas' | '/logomarca' | '/palavra'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/fontes' | '/horas' | '/logomarca'
-  id: '__root__' | '/' | '/fontes' | '/horas' | '/logomarca'
+  to: '/' | '/fontes' | '/horas' | '/logomarca' | '/palavra'
+  id: '__root__' | '/' | '/fontes' | '/horas' | '/logomarca' | '/palavra'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -67,10 +76,18 @@ export interface RootRouteChildren {
   FontesRoute: typeof FontesRoute
   HorasRoute: typeof HorasRoute
   LogomarcaRoute: typeof LogomarcaRoute
+  PalavraRoute: typeof PalavraRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/palavra': {
+      id: '/palavra'
+      path: '/palavra'
+      fullPath: '/palavra'
+      preLoaderRoute: typeof PalavraRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/logomarca': {
       id: '/logomarca'
       path: '/logomarca'
@@ -107,6 +124,7 @@ const rootRouteChildren: RootRouteChildren = {
   FontesRoute: FontesRoute,
   HorasRoute: HorasRoute,
   LogomarcaRoute: LogomarcaRoute,
+  PalavraRoute: PalavraRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
