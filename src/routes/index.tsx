@@ -18,6 +18,7 @@ export const Route = createFileRoute("/")({
 function Index() {
   const [bairro, setBairro] = useState("");
   const [nome, setNome] = useState("");
+  const [cor, setCor] = useState("#000000");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -26,7 +27,7 @@ function Index() {
 
   return (
     <main className="flex min-h-screen flex-col items-start bg-background px-6 py-16">
-      <div className="flex w-full max-w-5xl flex-col gap-16 text-foreground">
+      <div className="flex w-full max-w-5xl flex-col gap-16" style={{ color: cor }}>
         {/* Versão 1 — Centralizada */}
         <section className="flex flex-col items-start text-left leading-none">
           <span className="mb-3 text-xs uppercase tracking-[0.3em] text-foreground/50">
@@ -48,7 +49,7 @@ function Index() {
             </span>
           </h2>
           {nome && (
-            <p className="mt-3 text-base sm:text-lg uppercase tracking-[0.2em] text-foreground/90">
+            <p className="mt-3 text-base sm:text-lg uppercase tracking-[0.2em]">
               {nome}
             </p>
           )}
@@ -75,7 +76,7 @@ function Index() {
             </span>
           </h2>
           {nome && (
-            <p className="mt-3 text-base sm:text-lg uppercase tracking-[0.2em] text-foreground/90">
+            <p className="mt-3 text-base sm:text-lg uppercase tracking-[0.2em]">
               {nome}
             </p>
           )}
@@ -100,7 +101,7 @@ function Index() {
             </span>
           </h2>
           {nome && (
-            <p className="mt-3 text-base sm:text-lg uppercase tracking-[0.2em] text-foreground/90">
+            <p className="mt-3 text-base sm:text-lg uppercase tracking-[0.2em]">
               {nome}
             </p>
           )}
@@ -126,6 +127,20 @@ function Index() {
           Aplicar
         </button>
       </form>
+
+      <div className="mt-6 flex items-center gap-3">
+        <label htmlFor="cor" className="text-sm text-foreground">
+          Cor:
+        </label>
+        <input
+          id="cor"
+          type="color"
+          value={cor}
+          onChange={(e) => setCor(e.target.value)}
+          className="h-10 w-14 cursor-pointer rounded-md border border-input bg-background p-1"
+        />
+        <span className="text-sm uppercase text-foreground/70">{cor}</span>
+      </div>
     </main>
   );
 }
