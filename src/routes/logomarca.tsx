@@ -71,13 +71,15 @@ function Index() {
               ESPERANÇA
             </span>
           </h2>
-          <p className="mt-3 text-base sm:text-lg uppercase tracking-[0.2em]">
-            {nome || "DIGITE O NOME DO BAIRRO"}
-          </p>
+          {!semBairro && (
+            <p className="mt-3 text-base sm:text-lg uppercase tracking-[0.2em]">
+              {nome || "DIGITE O NOME DO BAIRRO"}
+            </p>
+          )}
           </div>
           <button
             type="button"
-            onClick={() => baixar(ref1.current, `igreja-esperanca-v1${nome ? "-" + nome.toLowerCase().replace(/\s+/g, "-") : ""}`)}
+            onClick={() => baixar(ref1.current, `igreja-esperanca-v1${nome && !semBairro ? "-" + nome.toLowerCase().replace(/\s+/g, "-") : ""}`)}
             className="mt-4 rounded-md bg-black px-4 py-2 text-xs font-medium text-white transition-colors hover:bg-neutral-800"
           >
             Baixar PNG (alta resolução, fundo transparente)
@@ -104,13 +106,15 @@ function Index() {
               ESPERANÇA
             </span>
           </h2>
-          <p className="mt-3 text-base sm:text-lg uppercase tracking-[0.2em]">
-            {nome || "DIGITE O NOME DO BAIRRO"}
-          </p>
+          {!semBairro && (
+            <p className="mt-3 text-base sm:text-lg uppercase tracking-[0.2em]">
+              {nome || "DIGITE O NOME DO BAIRRO"}
+            </p>
+          )}
           </div>
           <button
             type="button"
-            onClick={() => baixar(ref2.current, `igreja-esperanca-v2${nome ? "-" + nome.toLowerCase().replace(/\s+/g, "-") : ""}`)}
+            onClick={() => baixar(ref2.current, `igreja-esperanca-v2${nome && !semBairro ? "-" + nome.toLowerCase().replace(/\s+/g, "-") : ""}`)}
             className="mt-4 rounded-md bg-black px-4 py-2 text-xs font-medium text-white transition-colors hover:bg-neutral-800"
           >
             Baixar PNG (alta resolução, fundo transparente)
@@ -135,13 +139,15 @@ function Index() {
               ESPERANÇA
             </span>
           </h2>
-          <p className="mt-3 text-base sm:text-lg uppercase tracking-[0.2em]">
-            {nome || "DIGITE O NOME DO BAIRRO"}
-          </p>
+          {!semBairro && (
+            <p className="mt-3 text-base sm:text-lg uppercase tracking-[0.2em]">
+              {nome || "DIGITE O NOME DO BAIRRO"}
+            </p>
+          )}
           </div>
           <button
             type="button"
-            onClick={() => baixar(ref3.current, `igreja-esperanca-v3${nome ? "-" + nome.toLowerCase().replace(/\s+/g, "-") : ""}`)}
+            onClick={() => baixar(ref3.current, `igreja-esperanca-v3${nome && !semBairro ? "-" + nome.toLowerCase().replace(/\s+/g, "-") : ""}`)}
             className="mt-4 rounded-md bg-black px-4 py-2 text-xs font-medium text-white transition-colors hover:bg-neutral-800"
           >
             Baixar PNG (alta resolução, fundo transparente)
