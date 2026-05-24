@@ -304,7 +304,7 @@ function ContextoCard({ titulo, exemplos }: { titulo: string; exemplos: string[]
         {exemplos.map((ex) => (
           <div key={ex} className="flex items-center gap-2">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-            <span className="text-base text-foreground" style={{ fontFamily: '"Nexa Book", sans-serif' }}>{ex}</span>
+            <span className="text-base text-foreground" style={{ fontFamily: '"Inter", system-ui, sans-serif' }}>{ex}</span>
           </div>
         ))}
       </div>
