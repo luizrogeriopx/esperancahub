@@ -10,12 +10,18 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as LogomarcaRouteImport } from './routes/logomarca'
+import { Route as HorasRouteImport } from './routes/horas'
 import { Route as FontesRouteImport } from './routes/fontes'
 import { Route as IndexRouteImport } from './routes/index'
 
 const LogomarcaRoute = LogomarcaRouteImport.update({
   id: '/logomarca',
   path: '/logomarca',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HorasRoute = HorasRouteImport.update({
+  id: '/horas',
+  path: '/horas',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FontesRoute = FontesRouteImport.update({
@@ -32,30 +38,34 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/fontes': typeof FontesRoute
+  '/horas': typeof HorasRoute
   '/logomarca': typeof LogomarcaRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/fontes': typeof FontesRoute
+  '/horas': typeof HorasRoute
   '/logomarca': typeof LogomarcaRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/fontes': typeof FontesRoute
+  '/horas': typeof HorasRoute
   '/logomarca': typeof LogomarcaRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/fontes' | '/logomarca'
+  fullPaths: '/' | '/fontes' | '/horas' | '/logomarca'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/fontes' | '/logomarca'
-  id: '__root__' | '/' | '/fontes' | '/logomarca'
+  to: '/' | '/fontes' | '/horas' | '/logomarca'
+  id: '__root__' | '/' | '/fontes' | '/horas' | '/logomarca'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   FontesRoute: typeof FontesRoute
+  HorasRoute: typeof HorasRoute
   LogomarcaRoute: typeof LogomarcaRoute
 }
 
@@ -66,6 +76,13 @@ declare module '@tanstack/react-router' {
       path: '/logomarca'
       fullPath: '/logomarca'
       preLoaderRoute: typeof LogomarcaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/horas': {
+      id: '/horas'
+      path: '/horas'
+      fullPath: '/horas'
+      preLoaderRoute: typeof HorasRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/fontes': {
@@ -88,8 +105,19 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   FontesRoute: FontesRoute,
+  HorasRoute: HorasRoute,
   LogomarcaRoute: LogomarcaRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
