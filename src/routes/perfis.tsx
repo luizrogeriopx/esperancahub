@@ -39,10 +39,10 @@ function PerfisPage() {
           className="mt-2 text-4xl font-bold tracking-tight text-foreground sm:text-5xl"
           style={{ fontFamily: "'Nexa Heavy', Inter, system-ui, sans-serif" }}
         >
-          Guia de @ para Instagram de Igrejas
+          Guia de @ e Nomes para Instagram das Igrejas
         </h1>
         <p className="mt-3 max-w-2xl text-base text-foreground/70">
-          Como criar um perfil limpo, profissional e facil de memorizar.
+          Como criar um perfil limpo, profissional e fácil de memorizar.
         </p>
 
         {/* Intro */}
@@ -52,10 +52,10 @@ function PerfisPage() {
           </p>
           <ul className="list-disc space-y-1 pl-6">
             <li>simples</li>
-            <li>memoravel</li>
+            <li>memorável</li>
             <li>limpo visualmente</li>
-            <li>facil de pesquisar</li>
-            <li>facil de digitar</li>
+            <li>fácil de pesquisar</li>
+            <li>fácil de digitar</li>
             <li>forte para identidade da igreja</li>
           </ul>
         </section>
@@ -66,17 +66,17 @@ function PerfisPage() {
             className="text-2xl font-bold tracking-tight text-foreground"
             style={{ fontFamily: "'Nexa Heavy', Inter, system-ui, sans-serif" }}
           >
-            O Principio Mais Importante
+            O Princípio Mais Importante
           </h2>
-          <p className="mt-2 text-sm text-foreground/70">Menos informacao = mais forca visual</p>
+          <p className="mt-2 text-sm text-foreground/70">Menos informação = mais força visual</p>
           <p className="mt-4 text-sm leading-relaxed text-foreground/80">
             Perfis muito longos geram:
           </p>
           <ul className="mt-2 list-disc space-y-1 pl-6 text-sm text-foreground/80">
-            <li>poluicao visual</li>
-            <li>dificuldade de memorizacao</li>
+            <li>poluição visual</li>
+            <li>dificuldade de memorização</li>
             <li>dificuldade de busca</li>
-            <li>aparencia amadora</li>
+            <li>aparência amadora</li>
             <li>identidade confusa</li>
           </ul>
         </section>
@@ -87,7 +87,7 @@ function PerfisPage() {
             className="text-2xl font-bold tracking-tight text-foreground"
             style={{ fontFamily: "'Nexa Heavy', Inter, system-ui, sans-serif" }}
           >
-            Padrao Recomendado para o @
+            Padrão Recomendado para o @
           </h2>
           <p className="mt-3 text-sm leading-relaxed text-foreground/80">
             <strong>Estrutura ideal:</strong> <code className="rounded bg-muted px-1.5 py-0.5 font-mono text-xs">@esperanca + bairro</code>
@@ -114,7 +114,7 @@ function PerfisPage() {
             Evite no @
           </h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            <Card title="Pontos e tracos">
+            <Card title="Pontos e traços">
               <p className="mb-2">Evite: <code className="font-mono text-xs">. _ -</code></p>
               <p className="text-red-500"><Check ok={false} /> @igreja.esperanca.central</p>
               <p className="text-red-500"><Check ok={false} /> @esperanca_oficial</p>
@@ -123,12 +123,12 @@ function PerfisPage() {
               <p className="mt-2 text-green-600"><Check ok /> @esperancacentral</p>
             </Card>
             <Card title="'oficial'">
-              <p className="mb-2">Perfis com "oficial" geralmente ficam maiores, menos memoraveis e visualmente poluidos.</p>
+              <p className="mb-2">Perfis com "oficial" geralmente ficam maiores, menos memoráveis e visualmente poluídos.</p>
               <p className="text-red-500"><Check ok={false} /> @esperancacentraloficial</p>
               <p className="mt-2 text-green-600"><Check ok /> @esperancacentral</p>
             </Card>
             <Card title="Nomes gigantes">
-              <p className="mb-2">Evite nomes que dificultam busca, reduzem forca da marca e prejudicam estetica.</p>
+              <p className="mb-2">Evite nomes que dificultam busca, reduzem força da marca e prejudicam estética.</p>
               <p className="text-red-500"><Check ok={false} /> @igrejaevangelicaassembleiadedeusministerioesperanca</p>
               <p className="mt-2 text-green-600"><Check ok /> @esperancacentral</p>
             </Card>
@@ -148,26 +148,26 @@ function PerfisPage() {
           </p>
           <div className="mt-4 rounded-lg bg-muted p-4">
             <p className="text-sm font-semibold text-foreground">
-              IGREJA ESPERANCA + BAIRRO
+              IGREJA ESPERANÇA + BAIRRO
             </p>
           </div>
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             <Card title="Exemplos corretos">
               <div className="space-y-1">
-                <p><Check ok /> IGREJA ESPERANCA CENTRAL</p>
-                <p><Check ok /> IGREJA ESPERANCA NORTE</p>
-                <p><Check ok /> IGREJA ESPERANCA VITORIA</p>
+                <p><Check ok /> IGREJA ESPERANÇA CENTRAL</p>
+                <p><Check ok /> IGREJA ESPERANÇA NORTE</p>
+                <p><Check ok /> IGREJA ESPERANÇA VITÓRIA</p>
               </div>
             </Card>
-            <Card title="Excesso de denominacao">
+            <Card title="Excesso de denominação">
               <p className="mb-2">Evite:</p>
-              <p className="text-red-500"><Check ok={false} /> IGREJA ASSEMBLEIA DE DEUS MINISTERIO ESPERANCA</p>
-              <p className="text-red-500"><Check ok={false} /> IGREJA EVANGELICA ASSEMBLEIA DE DEUS ESPERANCA</p>
-              <p className="text-red-500"><Check ok={false} /> ASSEMBLEIA DE DEUS MINISTERIO ESPERANCA</p>
+              <p className="text-red-500"><Check ok={false} /> IGREJA ASSEMBLEIA DE DEUS MINISTÉRIO ESPERANÇA</p>
+              <p className="text-red-500"><Check ok={false} /> IGREJA EVANGÉLICA ASSEMBLEIA DE DEUS ESPERANÇA</p>
+              <p className="text-red-500"><Check ok={false} /> ASSEMBLEIA DE DEUS MINISTÉRIO ESPERANÇA</p>
             </Card>
             <Card title="Por que evitar nomes longos?">
               <p>
-                O Instagram funciona por impacto visual, rapidez, memorizacao e busca simples. Quanto menor e mais direto: mais moderno, mais forte, mais profissional, mais facil de crescer.
+                O Instagram funciona por impacto visual, rapidez, memorização e busca simples. Quanto menor e mais direto: mais moderno, mais forte, mais profissional, mais fácil de crescer.
               </p>
             </Card>
           </div>
@@ -179,14 +179,14 @@ function PerfisPage() {
             className="text-2xl font-bold tracking-tight text-foreground"
             style={{ fontFamily: "'Nexa Heavy', Inter, system-ui, sans-serif" }}
           >
-            Padrao Mais Forte para Marca
+            Padrão Mais Forte para Marca
           </h2>
           <div className="mt-6 overflow-hidden rounded-xl border border-border">
             <table className="w-full text-sm">
               <thead className="bg-muted">
                 <tr>
                   <th className="px-4 py-3 text-left font-semibold text-foreground">Elemento</th>
-                  <th className="px-4 py-3 text-left font-semibold text-foreground">Padrao Ideal</th>
+                  <th className="px-4 py-3 text-left font-semibold text-foreground">Padrão Ideal</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border bg-card text-foreground/80">
@@ -196,7 +196,7 @@ function PerfisPage() {
                 </tr>
                 <tr>
                   <td className="px-4 py-3 font-medium">Nome</td>
-                  <td className="px-4 py-3">IGREJA ESPERANCA CENTRAL</td>
+                  <td className="px-4 py-3">IGREJA ESPERANÇA CENTRAL</td>
                 </tr>
               </tbody>
             </table>
@@ -209,20 +209,20 @@ function PerfisPage() {
             className="text-2xl font-bold tracking-tight text-foreground"
             style={{ fontFamily: "'Nexa Heavy', Inter, system-ui, sans-serif" }}
           >
-            Beneficios desse Padrao
+            Benefícios desse Padrão
           </h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            <Card title="Mais facil de memorizar">
+            <Card title="Mais fácil de memorizar">
               <p>A pessoa lembra rapidamente.</p>
             </Card>
-            <Card title="Mais facil de procurar">
+            <Card title="Mais fácil de procurar">
               <p>Nomes curtos aparecem melhor nas buscas.</p>
             </Card>
             <Card title="Mais moderno">
-              <p>Perfis limpos transmitem organizacao.</p>
+              <p>Perfis limpos transmitem organização.</p>
             </Card>
             <Card title="Melhor identidade visual">
-              <p>Fica bonito em artes, banners, videos, transmissoes, camisetas e teloes.</p>
+              <p>Fica bonito em artes, banners, vídeos, transmissões, camisetas e telões.</p>
             </Card>
           </div>
         </section>
@@ -238,11 +238,11 @@ function PerfisPage() {
           <div className="mt-6 grid gap-4 md:grid-cols-2">
             <div className="rounded-xl border border-red-200 bg-red-50 p-6 dark:border-red-900/40 dark:bg-red-950/20">
               <h3 className="text-sm font-bold uppercase tracking-wider text-red-800 dark:text-red-200">
-                Perfil Poluido
+                Perfil Poluído
               </h3>
               <div className="mt-4 space-y-2 text-sm text-red-900 dark:text-red-100">
                 <p><strong>@:</strong> assembleiadeusministerioesperancacentraloficial</p>
-                <p><strong>Nome:</strong> IGREJA EVANGELICA ASSEMBLEIA DE DEUS MINISTERIO ESPERANCA CENTRAL</p>
+                <p><strong>Nome:</strong> IGREJA EVANGÉLICA ASSEMBLEIA DE DEUS MINISTÉRIO ESPERANÇA CENTRAL</p>
               </div>
             </div>
             <div className="rounded-xl border border-green-200 bg-green-50 p-6 dark:border-green-900/40 dark:bg-green-950/20">
@@ -251,7 +251,7 @@ function PerfisPage() {
               </h3>
               <div className="mt-4 space-y-2 text-sm text-green-900 dark:text-green-100">
                 <p><strong>@:</strong> esperancacentral</p>
-                <p><strong>Nome:</strong> IGREJA ESPERANCA CENTRAL</p>
+                <p><strong>Nome:</strong> IGREJA ESPERANÇA CENTRAL</p>
               </div>
             </div>
           </div>
@@ -263,10 +263,10 @@ function PerfisPage() {
             className="text-xl font-bold tracking-tight text-foreground"
             style={{ fontFamily: "'Nexa Heavy', Inter, system-ui, sans-serif" }}
           >
-            Conclusao
+            Conclusão
           </h2>
           <p className="mt-3 text-sm leading-relaxed text-foreground/80">
-            No Instagram, simplicidade gera forca. O padrao mais recomendado hoje é:
+            No Instagram, simplicidade gera força. O padrão mais recomendado hoje é:
           </p>
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
             <div className="rounded-lg bg-muted p-4">
@@ -275,11 +275,11 @@ function PerfisPage() {
             </div>
             <div className="rounded-lg bg-muted p-4">
               <p className="text-xs uppercase tracking-wider text-foreground/50">Nome</p>
-              <p className="mt-1 text-sm font-semibold text-foreground">IGREJA ESPERANCA + BAIRRO</p>
+              <p className="mt-1 text-sm font-semibold text-foreground">IGREJA ESPERANÇA + BAIRRO</p>
             </div>
           </div>
           <p className="mt-4 text-sm leading-relaxed text-foreground/80">
-            Menos poluicao. Mais identidade. Mais memorizacao. Mais profissionalismo.
+            Menos poluição. Mais identidade. Mais memorização. Mais profissionalismo.
           </p>
         </section>
       </div>
