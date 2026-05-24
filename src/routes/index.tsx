@@ -47,7 +47,7 @@ function Index() {
             </span>
           </h2>
           {nome && (
-            <p className="mt-3 text-base sm:text-lg uppercase tracking-[0.2em] text-foreground/90">
+            <p className="mt-3 self-center text-base sm:text-lg uppercase tracking-[0.2em] text-foreground/90">
               {nome}
             </p>
           )}
@@ -97,7 +97,7 @@ function Index() {
             </span>
           </h2>
           {nome && (
-            <p className="mt-3 text-base sm:text-lg uppercase tracking-[0.2em] text-foreground/90">
+            <p className="mt-3 self-center text-base sm:text-lg uppercase tracking-[0.2em] text-foreground/90">
               {nome}
             </p>
           )}
