@@ -84,15 +84,13 @@ function Index() {
           <span className="mb-3 text-xs uppercase tracking-[0.3em] text-foreground/50">
             Versão 3 — Mesma linha
           </span>
-          <h2 className="flex flex-wrap items-baseline justify-center gap-x-4">
+          <h2 className="flex flex-wrap items-baseline gap-x-4 text-4xl sm:text-6xl md:text-7xl">
             <span
-              className="text-3xl sm:text-5xl md:text-6xl"
               style={{ fontFamily: '"Nexa Book", sans-serif', letterSpacing: "0.18em" }}
             >
               IGREJA
             </span>
             <span
-              className="text-4xl sm:text-6xl md:text-7xl"
               style={{ fontFamily: '"Nexa Heavy", sans-serif', letterSpacing: "0.02em" }}
             >
               ESPERANÇA
