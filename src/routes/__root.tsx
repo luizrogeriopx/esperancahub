@@ -149,6 +149,14 @@ function RootComponent() {
             <Link to="/qr-pix" activeProps={{ className: "text-foreground font-semibold" }}>
               QR Pix
             </Link>
+            <a
+              href="https://drive.google.com/drive/folders/1L28VPBhgAkpigvydEdHbevr2wgJLeeKX?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors hover:text-foreground"
+            >
+              Downloads
+            </a>
           </nav>
         </header>
         <Outlet />
