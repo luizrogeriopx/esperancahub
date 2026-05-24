@@ -20,6 +20,7 @@ function Index() {
   const [bairro, setBairro] = useState("");
   const [nome, setNome] = useState("");
   const [cor, setCor] = useState("#000000");
+  const [semBairro, setSemBairro] = useState(false);
 
   const ref1 = useRef<HTMLDivElement>(null);
   const ref2 = useRef<HTMLDivElement>(null);
