@@ -69,11 +69,9 @@ function Index() {
               ESPERANÇA
             </span>
           </h2>
-          {nome && (
-            <p className="mt-3 text-base sm:text-lg uppercase tracking-[0.2em]">
-              {nome}
-            </p>
-          )}
+          <p className="mt-3 text-base sm:text-lg uppercase tracking-[0.2em]">
+            {nome || "DIGITE O NOME DO BAIRRO"}
+          </p>
           </div>
           <button
             type="button"
@@ -104,11 +102,9 @@ function Index() {
               ESPERANÇA
             </span>
           </h2>
-          {nome && (
-            <p className="mt-3 text-base sm:text-lg uppercase tracking-[0.2em]">
-              {nome}
-            </p>
-          )}
+          <p className="mt-3 text-base sm:text-lg uppercase tracking-[0.2em]">
+            {nome || "DIGITE O NOME DO BAIRRO"}
+          </p>
           </div>
           <button
             type="button"
@@ -137,11 +133,9 @@ function Index() {
               ESPERANÇA
             </span>
           </h2>
-          {nome && (
-            <p className="mt-3 text-base sm:text-lg uppercase tracking-[0.2em]">
-              {nome}
-            </p>
-          )}
+          <p className="mt-3 text-base sm:text-lg uppercase tracking-[0.2em]">
+            {nome || "DIGITE O NOME DO BAIRRO"}
+          </p>
           </div>
           <button
             type="button"
