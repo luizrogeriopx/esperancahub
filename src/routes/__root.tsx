@@ -113,7 +113,25 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Outlet />
+      <div className="min-h-screen bg-background">
+        <header className="flex items-center justify-between border-b border-border px-6 py-4">
+          <Link to="/" className="text-sm font-semibold tracking-[0.2em] uppercase text-foreground">
+            Esperança Hub
+          </Link>
+          <nav className="flex items-center gap-6 text-xs uppercase tracking-[0.2em] text-foreground/70">
+            <Link to="/" activeOptions={{ exact: true }} activeProps={{ className: "text-foreground font-semibold" }}>
+              Início
+            </Link>
+            <Link to="/logomarca" activeProps={{ className: "text-foreground font-semibold" }}>
+              Logomarca
+            </Link>
+            <Link to="/fontes" activeProps={{ className: "text-foreground font-semibold" }}>
+              Fontes
+            </Link>
+          </nav>
+        </header>
+        <Outlet />
+      </div>
     </QueryClientProvider>
   );
 }
