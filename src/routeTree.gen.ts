@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as QrPixRouteImport } from './routes/qr-pix'
+import { Route as PerfisRouteImport } from './routes/perfis'
 import { Route as PalavraRouteImport } from './routes/palavra'
 import { Route as LogomarcaRouteImport } from './routes/logomarca'
 import { Route as HorasRouteImport } from './routes/horas'
@@ -19,6 +20,11 @@ import { Route as IndexRouteImport } from './routes/index'
 const QrPixRoute = QrPixRouteImport.update({
   id: '/qr-pix',
   path: '/qr-pix',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PerfisRoute = PerfisRouteImport.update({
+  id: '/perfis',
+  path: '/perfis',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PalavraRoute = PalavraRouteImport.update({
@@ -53,6 +59,7 @@ export interface FileRoutesByFullPath {
   '/horas': typeof HorasRoute
   '/logomarca': typeof LogomarcaRoute
   '/palavra': typeof PalavraRoute
+  '/perfis': typeof PerfisRoute
   '/qr-pix': typeof QrPixRoute
 }
 export interface FileRoutesByTo {
@@ -61,6 +68,7 @@ export interface FileRoutesByTo {
   '/horas': typeof HorasRoute
   '/logomarca': typeof LogomarcaRoute
   '/palavra': typeof PalavraRoute
+  '/perfis': typeof PerfisRoute
   '/qr-pix': typeof QrPixRoute
 }
 export interface FileRoutesById {
@@ -70,13 +78,28 @@ export interface FileRoutesById {
   '/horas': typeof HorasRoute
   '/logomarca': typeof LogomarcaRoute
   '/palavra': typeof PalavraRoute
+  '/perfis': typeof PerfisRoute
   '/qr-pix': typeof QrPixRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/fontes' | '/horas' | '/logomarca' | '/palavra' | '/qr-pix'
+  fullPaths:
+    | '/'
+    | '/fontes'
+    | '/horas'
+    | '/logomarca'
+    | '/palavra'
+    | '/perfis'
+    | '/qr-pix'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/fontes' | '/horas' | '/logomarca' | '/palavra' | '/qr-pix'
+  to:
+    | '/'
+    | '/fontes'
+    | '/horas'
+    | '/logomarca'
+    | '/palavra'
+    | '/perfis'
+    | '/qr-pix'
   id:
     | '__root__'
     | '/'
@@ -84,6 +107,7 @@ export interface FileRouteTypes {
     | '/horas'
     | '/logomarca'
     | '/palavra'
+    | '/perfis'
     | '/qr-pix'
   fileRoutesById: FileRoutesById
 }
@@ -93,6 +117,7 @@ export interface RootRouteChildren {
   HorasRoute: typeof HorasRoute
   LogomarcaRoute: typeof LogomarcaRoute
   PalavraRoute: typeof PalavraRoute
+  PerfisRoute: typeof PerfisRoute
   QrPixRoute: typeof QrPixRoute
 }
 
@@ -103,6 +128,13 @@ declare module '@tanstack/react-router' {
       path: '/qr-pix'
       fullPath: '/qr-pix'
       preLoaderRoute: typeof QrPixRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/perfis': {
+      id: '/perfis'
+      path: '/perfis'
+      fullPath: '/perfis'
+      preLoaderRoute: typeof PerfisRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/palavra': {
@@ -149,6 +181,7 @@ const rootRouteChildren: RootRouteChildren = {
   HorasRoute: HorasRoute,
   LogomarcaRoute: LogomarcaRoute,
   PalavraRoute: PalavraRoute,
+  PerfisRoute: PerfisRoute,
   QrPixRoute: QrPixRoute,
 }
 export const routeTree = rootRouteImport
