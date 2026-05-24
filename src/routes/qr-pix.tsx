@@ -79,6 +79,7 @@ function QrPixPage() {
   const [descricao, setDescricao] = useState("");
   const [txid, setTxid] = useState("");
   const [copiado, setCopiado] = useState(false);
+  const [gerado, setGerado] = useState(false);
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -89,7 +90,7 @@ function QrPixPage() {
 
   useEffect(() => {
     if (!canvasRef.current) return;
-    if (!payload) {
+    if (!payload || !gerado) {
       const ctx = canvasRef.current.getContext("2d");
       ctx?.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
       return;
@@ -100,7 +101,12 @@ function QrPixPage() {
       color: { dark: "#000000", light: "#ffffff" },
       errorCorrectionLevel: "M",
     });
-  }, [payload]);
+  }, [payload, gerado]);
+
+  const gerar = () => {
+    if (!chave.trim() || !nome.trim() || !cidade.trim()) return;
+    setGerado(true);
+  };
 
   const copiar = async () => {
     if (!payload) return;
