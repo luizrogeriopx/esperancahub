@@ -139,7 +139,18 @@ function Index() {
           onInput={(e) => setCor((e.target as HTMLInputElement).value)}
           className="h-10 w-14 cursor-pointer rounded-md border border-input bg-background p-1"
         />
-        <span className="text-sm uppercase text-foreground/70">{cor}</span>
+        <input
+          type="text"
+          value={cor}
+          onChange={(e) => {
+            let v = e.target.value.trim();
+            if (!v.startsWith("#")) v = "#" + v;
+            if (/^#[0-9A-Fa-f]{6}$/.test(v)) setCor(v);
+            else setCor(v.slice(0, 7));
+          }}
+          className="w-24 rounded-md border border-input bg-background px-2 py-1.5 text-sm uppercase text-foreground outline-none focus:ring-2 focus:ring-ring"
+          maxLength={7}
+        />
       </div>
     </main>
   );
