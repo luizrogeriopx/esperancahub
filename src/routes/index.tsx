@@ -43,8 +43,7 @@ function Index() {
         </h1>
         {nome && (
           <p
-            className="mt-6 text-2xl sm:text-4xl md:text-5xl uppercase text-foreground"
-            style={{ fontFamily: '"Nexa Book", sans-serif', letterSpacing: "0.25em" }}
+            className="mt-4 text-lg sm:text-xl md:text-2xl uppercase tracking-[0.2em] text-foreground/90"
           >
             {nome}
           </p>
