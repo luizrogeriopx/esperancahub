@@ -122,7 +122,7 @@ function RootComponent() {
           <Link to="/" className="text-sm font-semibold tracking-[0.2em] uppercase text-foreground">
             Esperança Hub
           </Link>
-          <nav className="-mx-4 flex items-center gap-4 overflow-x-auto px-4 text-xs uppercase tracking-[0.2em] text-foreground/70 sm:mx-0 sm:gap-6 sm:px-0 sm:overflow-visible whitespace-nowrap">
+          <nav className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs uppercase tracking-[0.2em] text-foreground/70 sm:gap-6">
             <Link to="/" activeOptions={{ exact: true }} activeProps={{ className: "text-foreground font-semibold" }}>
               Início
             </Link>
