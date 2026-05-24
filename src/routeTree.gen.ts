@@ -10,11 +10,17 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as LogomarcaRouteImport } from './routes/logomarca'
+import { Route as FontesRouteImport } from './routes/fontes'
 import { Route as IndexRouteImport } from './routes/index'
 
 const LogomarcaRoute = LogomarcaRouteImport.update({
   id: '/logomarca',
   path: '/logomarca',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FontesRoute = FontesRouteImport.update({
+  id: '/fontes',
+  path: '/fontes',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -25,27 +31,31 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/fontes': typeof FontesRoute
   '/logomarca': typeof LogomarcaRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/fontes': typeof FontesRoute
   '/logomarca': typeof LogomarcaRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/fontes': typeof FontesRoute
   '/logomarca': typeof LogomarcaRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/logomarca'
+  fullPaths: '/' | '/fontes' | '/logomarca'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/logomarca'
-  id: '__root__' | '/' | '/logomarca'
+  to: '/' | '/fontes' | '/logomarca'
+  id: '__root__' | '/' | '/fontes' | '/logomarca'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  FontesRoute: typeof FontesRoute
   LogomarcaRoute: typeof LogomarcaRoute
 }
 
@@ -56,6 +66,13 @@ declare module '@tanstack/react-router' {
       path: '/logomarca'
       fullPath: '/logomarca'
       preLoaderRoute: typeof LogomarcaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fontes': {
+      id: '/fontes'
+      path: '/fontes'
+      fullPath: '/fontes'
+      preLoaderRoute: typeof FontesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -70,6 +87,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  FontesRoute: FontesRoute,
   LogomarcaRoute: LogomarcaRoute,
 }
 export const routeTree = rootRouteImport
