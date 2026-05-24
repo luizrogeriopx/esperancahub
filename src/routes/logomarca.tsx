@@ -48,7 +48,7 @@ function Index() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-start bg-background px-6 py-16">
+    <main className="flex min-h-screen flex-col items-start overflow-x-hidden bg-background px-4 py-12 sm:px-6 sm:py-16">
       <div className="flex w-full max-w-5xl flex-col gap-16" style={{ color: cor }}>
         {/* Versão 1 — Centralizada */}
         <section className="flex flex-col items-start text-left leading-none">
