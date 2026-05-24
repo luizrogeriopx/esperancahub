@@ -23,9 +23,9 @@ function Check({ ok }: { ok?: boolean }) {
 
 function Card({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <div className="rounded-xl border border-border bg-card p-6 shadow-sm">
-      <h3 className="text-lg font-semibold tracking-tight text-card-foreground">{title}</h3>
-      <div className="mt-3 overflow-hidden text-sm leading-relaxed text-card-foreground/80 break-words">{children}</div>
+    <div className="overflow-hidden rounded-xl border border-border bg-card p-5 shadow-sm sm:p-6">
+      <h3 className="text-base sm:text-lg font-semibold tracking-tight text-card-foreground break-words">{title}</h3>
+      <div className="mt-3 overflow-hidden text-sm leading-relaxed text-card-foreground/80 [overflow-wrap:anywhere] [word-break:break-word]">{children}</div>
     </div>
   );
 }
