@@ -25,29 +25,85 @@ function Index() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-background px-6">
-      <div className="flex flex-col items-center leading-none tracking-tight text-foreground">
-        <h1 className="flex flex-col items-center">
-          <span
-            className="text-5xl sm:text-7xl md:text-8xl"
-            style={{ fontFamily: '"Nexa Book", sans-serif', letterSpacing: "0.18em" }}
-          >
-            IGREJA
+    <main className="flex min-h-screen flex-col items-center bg-background px-6 py-16">
+      <div className="flex w-full max-w-5xl flex-col gap-16 text-foreground">
+        {/* Versão 1 — Centralizada */}
+        <section className="flex flex-col items-center text-center leading-none">
+          <span className="mb-3 text-xs uppercase tracking-[0.3em] text-foreground/50">
+            Versão 1 — Centralizada
           </span>
-          <span
-            className="mt-2 text-6xl sm:text-8xl md:text-9xl"
-            style={{ fontFamily: '"Nexa Heavy", sans-serif', letterSpacing: "0.02em" }}
-          >
-            ESPERANÇA
+          <h2 className="flex flex-col items-center">
+            <span
+              className="text-4xl sm:text-6xl md:text-7xl"
+              style={{ fontFamily: '"Nexa Book", sans-serif', letterSpacing: "0.18em" }}
+            >
+              IGREJA
+            </span>
+            <span
+              className="mt-2 text-5xl sm:text-7xl md:text-8xl"
+              style={{ fontFamily: '"Nexa Heavy", sans-serif', letterSpacing: "0.02em" }}
+            >
+              ESPERANÇA
+            </span>
+          </h2>
+          {nome && (
+            <p className="mt-3 text-base sm:text-lg uppercase tracking-[0.2em] text-foreground/90">
+              {nome}
+            </p>
+          )}
+        </section>
+
+        {/* Versão 2 — Alinhada à esquerda */}
+        <section className="flex flex-col items-start text-left leading-none">
+          <span className="mb-3 text-xs uppercase tracking-[0.3em] text-foreground/50">
+            Versão 2 — Alinhada à esquerda
           </span>
-        </h1>
-        {nome && (
-          <p
-            className="mt-4 text-lg sm:text-xl md:text-2xl uppercase tracking-[0.2em] text-foreground/90"
-          >
-            {nome}
-          </p>
-        )}
+          <h2 className="flex flex-col items-start">
+            <span
+              className="text-4xl sm:text-6xl md:text-7xl"
+              style={{ fontFamily: '"Nexa Book", sans-serif', letterSpacing: "0.18em" }}
+            >
+              IGREJA
+            </span>
+            <span
+              className="mt-2 text-5xl sm:text-7xl md:text-8xl"
+              style={{ fontFamily: '"Nexa Heavy", sans-serif', letterSpacing: "0.02em" }}
+            >
+              ESPERANÇA
+            </span>
+          </h2>
+          {nome && (
+            <p className="mt-3 text-base sm:text-lg uppercase tracking-[0.2em] text-foreground/90">
+              {nome}
+            </p>
+          )}
+        </section>
+
+        {/* Versão 3 — Mesma linha */}
+        <section className="flex flex-col items-center text-center leading-none">
+          <span className="mb-3 text-xs uppercase tracking-[0.3em] text-foreground/50">
+            Versão 3 — Mesma linha
+          </span>
+          <h2 className="flex flex-wrap items-baseline justify-center gap-x-4">
+            <span
+              className="text-3xl sm:text-5xl md:text-6xl"
+              style={{ fontFamily: '"Nexa Book", sans-serif', letterSpacing: "0.18em" }}
+            >
+              IGREJA
+            </span>
+            <span
+              className="text-4xl sm:text-6xl md:text-7xl"
+              style={{ fontFamily: '"Nexa Heavy", sans-serif', letterSpacing: "0.02em" }}
+            >
+              ESPERANÇA
+            </span>
+          </h2>
+          {nome && (
+            <p className="mt-3 text-base sm:text-lg uppercase tracking-[0.2em] text-foreground/90">
+              {nome}
+            </p>
+          )}
+        </section>
       </div>
 
       <form
