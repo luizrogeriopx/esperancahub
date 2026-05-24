@@ -25,7 +25,7 @@ function Home() {
           ESPERANÇA
         </span>
         <span
-          className="text-5xl sm:text-7xl md:text-8xl"
+          className="text-6xl sm:text-8xl md:text-9xl"
           style={{ fontFamily: '"Nexa Book", sans-serif', letterSpacing: "0.15em" }}
         >
           HUB
@@ -33,7 +33,7 @@ function Home() {
       </h1>
       <p
         className="mt-6 text-base sm:text-lg uppercase tracking-[0.35em] text-foreground/70"
-        style={{ fontFamily: '"Nexa Book", sans-serif' }}
+        style={{ fontFamily: '"Inter", system-ui, sans-serif' }}
       >
         Comunicação e Mídia
       </p>
