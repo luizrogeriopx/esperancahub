@@ -32,7 +32,7 @@ const fontes = [
 
 function Fontes() {
   return (
-    <main className="flex min-h-[calc(100vh-65px)] flex-col items-start bg-background px-6 py-16">
+    <main className="flex min-h-[calc(100vh-65px)] flex-col items-start overflow-x-hidden bg-background px-4 py-12 sm:px-6 sm:py-16">
       <div className="w-full max-w-5xl">
         <p className="text-base sm:text-lg uppercase tracking-[0.2em] text-neutral-500">
           Baixe individualmente as fontes oficiais da{" "}
@@ -45,7 +45,7 @@ function Fontes() {
           <section className="flex flex-col gap-4">
             <div className="flex flex-col gap-1">
               <p
-                className="text-5xl sm:text-7xl md:text-8xl text-foreground"
+                className="text-3xl sm:text-7xl md:text-8xl text-foreground break-words"
                 style={{ fontFamily: '"Nexa Heavy", sans-serif', letterSpacing: "0.02em" }}
               >
                 NEXA HEAVY
@@ -66,8 +66,8 @@ function Fontes() {
           <section className="flex flex-col gap-4">
             <div className="flex flex-col gap-1">
               <p
-                className="text-4xl sm:text-6xl md:text-7xl text-foreground"
-                style={{ fontFamily: '"Nexa Book", sans-serif', letterSpacing: "0.35em" }}
+                className="text-2xl sm:text-6xl md:text-7xl text-foreground break-words"
+                style={{ fontFamily: '"Nexa Book", sans-serif', letterSpacing: "0.2em" }}
               >
                 NEXA BOOK
               </p>
