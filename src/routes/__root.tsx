@@ -119,8 +119,13 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <div className="min-h-screen overflow-x-hidden bg-background">
         <header className="flex flex-col gap-3 border-b border-border px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
-          <Link to="/" className="text-sm font-semibold tracking-[0.2em] uppercase text-foreground">
-            Esperança Hub
+          <Link to="/" className="flex items-baseline gap-x-1.5 text-foreground sm:gap-x-2">
+            <span style={{ fontFamily: '"Nexa Heavy", sans-serif', letterSpacing: "0.02em" }} className="text-sm sm:text-base">
+              ESPERANÇA
+            </span>
+            <span style={{ fontFamily: '"Nexa Book", sans-serif', letterSpacing: "0.15em" }} className="text-sm sm:text-base">
+              HUB
+            </span>
           </Link>
           <nav className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs uppercase tracking-[0.2em] text-foreground/70 sm:gap-6">
             <Link to="/" activeOptions={{ exact: true }} activeProps={{ className: "text-foreground font-semibold" }}>
