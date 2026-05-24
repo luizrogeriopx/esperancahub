@@ -72,6 +72,3 @@ function Index() {
     </main>
   );
 }
-    </main>
-  );
-}
