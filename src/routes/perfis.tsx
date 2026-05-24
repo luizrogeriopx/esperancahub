@@ -32,11 +32,11 @@ function Card({ title, children }: { title: string; children: React.ReactNode })
 
 function PerfisPage() {
   return (
-    <main className="min-h-screen bg-background px-6 py-16" style={{ fontFamily: "Inter, system-ui, sans-serif" }}>
+    <main className="min-h-screen overflow-x-hidden bg-background px-4 py-12 sm:px-6 sm:py-16" style={{ fontFamily: "Inter, system-ui, sans-serif" }}>
       <div className="mx-auto max-w-5xl">
         <span className="text-xs uppercase tracking-[0.3em] text-foreground/50">Guia</span>
         <h1
-          className="mt-2 text-4xl font-bold tracking-tight text-foreground sm:text-5xl"
+          className="mt-2 text-3xl font-bold tracking-tight text-foreground sm:text-5xl"
           style={{ fontFamily: "'Nexa Heavy', Inter, system-ui, sans-serif" }}
         >
           Guia de @ e Nomes para Instagram das Igrejas
