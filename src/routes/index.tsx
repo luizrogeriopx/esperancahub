@@ -34,6 +34,7 @@ function Index() {
       pixelRatio: 6,
       backgroundColor: undefined,
       cacheBust: true,
+      style: { background: "transparent", backgroundImage: "none" },
     });
     const link = document.createElement("a");
     link.download = `${filename}.png`;
@@ -54,7 +55,7 @@ function Index() {
           <span className="mb-3 text-xs uppercase tracking-[0.3em] text-foreground/50">
             Versão 1 — Centralizada
           </span>
-          <div ref={ref1} className="flex flex-col items-center w-fit p-4">
+          <div ref={ref1} className="flex flex-col items-center w-fit p-4 preview-bg">
           <h2 className="flex flex-col items-center">
             <span
               className="text-4xl sm:text-6xl md:text-7xl"
@@ -87,7 +88,7 @@ function Index() {
           <span className="mb-3 text-xs uppercase tracking-[0.3em] text-foreground/50">
             Versão 2 — Alinhada à esquerda
           </span>
-          <div ref={ref2} className="p-4">
+          <div ref={ref2} className="p-4 preview-bg">
           <h2 className="flex flex-col items-start">
             <span
               className="text-4xl sm:text-6xl md:text-7xl"
@@ -120,7 +121,7 @@ function Index() {
           <span className="mb-3 text-xs uppercase tracking-[0.3em] text-foreground/50">
             Versão 3 — Mesma linha
           </span>
-          <div ref={ref3} className="flex flex-col items-center w-fit p-4">
+          <div ref={ref3} className="flex flex-col items-center w-fit p-4 preview-bg">
           <h2 className="flex flex-wrap items-baseline gap-x-3 text-4xl sm:text-6xl md:text-7xl">
             <span
               style={{ fontFamily: '"Nexa Book", sans-serif', letterSpacing: "0.08em" }}
