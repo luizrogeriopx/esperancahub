@@ -34,17 +34,13 @@ function Fontes() {
   return (
     <main className="flex min-h-[calc(100vh-65px)] flex-col items-start bg-background px-6 py-16">
       <div className="w-full max-w-5xl">
-        <h1
-          className="text-4xl sm:text-6xl md:text-7xl text-foreground"
-          style={{ fontFamily: '"Nexa Book", sans-serif', letterSpacing: "0.35em" }}
-        >
-          FONTES
-        </h1>
         <p
-          className="mt-2 text-base sm:text-lg uppercase tracking-[0.2em] text-foreground/70"
+          className="text-base sm:text-lg uppercase tracking-[0.2em] text-foreground/70"
           style={{ fontFamily: '"Nexa Book", sans-serif' }}
         >
-          Baixe individualmente as fontes oficiais da Igreja Esperança
+          Baixe individualmente as fontes oficiais da{" "}
+          <span style={{ fontFamily: '"Nexa Book", sans-serif' }}>IGREJA</span>{" "}
+          <span style={{ fontFamily: '"Nexa Heavy", sans-serif' }}>ESPERANÇA</span>
         </p>
 
         <div className="mt-16 flex flex-col gap-16">
