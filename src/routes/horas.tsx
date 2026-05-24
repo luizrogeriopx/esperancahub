@@ -240,7 +240,7 @@ function ExemploCard({ certo, errado }: { certo: string; errado: string }) {
       </div>
       <div className="text-right">
         <p className="text-[10px] uppercase tracking-[0.15em] text-red-500 font-semibold">Errado</p>
-        <p className="mt-1 text-xl text-red-500/70 line-through" style={{ fontFamily: '"Nexa Book", sans-serif' }}>{errado}</p>
+        <p className="mt-1 text-xl text-red-500" style={{ fontFamily: '"Nexa Book", sans-serif' }}>{errado}</p>
       </div>
     </div>
   );
@@ -283,7 +283,7 @@ function RegraCard({
         <span className="inline-flex items-center rounded bg-emerald-100 dark:bg-emerald-900/30 px-2 py-1 text-sm font-semibold text-emerald-700 dark:text-emerald-400">
           {certo}
         </span>
-        <span className="inline-flex items-center rounded bg-red-100 dark:bg-red-900/30 px-2 py-1 text-sm font-semibold text-red-600 dark:text-red-400 line-through">
+        <span className="inline-flex items-center rounded bg-red-100 dark:bg-red-900/30 px-2 py-1 text-sm font-semibold text-red-600 dark:text-red-400">
           {errado}
         </span>
       </div>
@@ -315,7 +315,7 @@ function ContextoCard({ titulo, exemplos }: { titulo: string; exemplos: string[]
 function ErroCard({ errado, certo }: { errado: string; certo: string }) {
   return (
     <div className="flex items-center gap-4 rounded-lg border border-border bg-neutral-50 dark:bg-neutral-900 px-5 py-4">
-      <span className="text-lg text-red-500 line-through" style={{ fontFamily: '"Nexa Book", sans-serif' }}>{errado}</span>
+      <span className="text-lg text-red-500" style={{ fontFamily: '"Nexa Book", sans-serif' }}>{errado}</span>
       <span className="text-foreground/30">→</span>
       <span className="text-lg text-emerald-600 font-semibold" style={{ fontFamily: '"Nexa Heavy", sans-serif' }}>{certo}</span>
     </div>
