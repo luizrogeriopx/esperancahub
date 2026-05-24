@@ -35,12 +35,12 @@ function Index() {
           <h2 className="flex flex-col items-center">
             <span
               className="text-4xl sm:text-6xl md:text-7xl"
-              style={{ fontFamily: '"Nexa Book", sans-serif', letterSpacing: "0.18em" }}
+              style={{ fontFamily: '"Nexa Book", sans-serif', letterSpacing: "0.42em" }}
             >
               IGREJA
             </span>
             <span
-              className="mt-2 text-5xl sm:text-7xl md:text-8xl"
+              className="mt-1 text-5xl sm:text-7xl md:text-8xl"
               style={{ fontFamily: '"Nexa Heavy", sans-serif', letterSpacing: "0.02em" }}
             >
               ESPERANÇA
@@ -61,12 +61,12 @@ function Index() {
           <h2 className="flex flex-col items-start">
             <span
               className="text-4xl sm:text-6xl md:text-7xl"
-              style={{ fontFamily: '"Nexa Book", sans-serif', letterSpacing: "0.18em" }}
+              style={{ fontFamily: '"Nexa Book", sans-serif', letterSpacing: "0.42em" }}
             >
               IGREJA
             </span>
             <span
-              className="mt-2 text-5xl sm:text-7xl md:text-8xl"
+              className="mt-1 text-5xl sm:text-7xl md:text-8xl"
               style={{ fontFamily: '"Nexa Heavy", sans-serif', letterSpacing: "0.02em" }}
             >
               ESPERANÇA
@@ -84,9 +84,9 @@ function Index() {
           <span className="mb-3 text-xs uppercase tracking-[0.3em] text-foreground/50">
             Versão 3 — Mesma linha
           </span>
-          <h2 className="flex flex-wrap items-baseline gap-x-4 text-4xl sm:text-6xl md:text-7xl">
+          <h2 className="flex flex-wrap items-baseline gap-x-3 text-4xl sm:text-6xl md:text-7xl">
             <span
-              style={{ fontFamily: '"Nexa Book", sans-serif', letterSpacing: "0.18em" }}
+              style={{ fontFamily: '"Nexa Book", sans-serif', letterSpacing: "0.12em" }}
             >
               IGREJA
             </span>
