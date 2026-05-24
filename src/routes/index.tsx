@@ -136,7 +136,7 @@ function Index() {
           id="cor"
           type="color"
           value={cor}
-          onChange={(e) => setCor(e.target.value)}
+          onInput={(e) => setCor((e.target as HTMLInputElement).value)}
           className="h-10 w-14 cursor-pointer rounded-md border border-input bg-background p-1"
         />
         <span className="text-sm uppercase text-foreground/70">{cor}</span>
