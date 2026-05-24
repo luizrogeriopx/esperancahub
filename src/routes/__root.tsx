@@ -128,6 +128,9 @@ function RootComponent() {
             <Link to="/fontes" activeProps={{ className: "text-foreground font-semibold" }}>
               Fontes
             </Link>
+            <Link to="/horas" activeProps={{ className: "text-foreground font-semibold" }}>
+              Horas
+            </Link>
           </nav>
         </header>
         <Outlet />
