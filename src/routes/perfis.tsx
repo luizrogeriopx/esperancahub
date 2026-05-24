@@ -25,7 +25,7 @@ function Card({ title, children }: { title: string; children: React.ReactNode })
   return (
     <div className="rounded-xl border border-border bg-card p-6 shadow-sm">
       <h3 className="text-lg font-semibold tracking-tight text-card-foreground">{title}</h3>
-      <div className="mt-3 text-sm leading-relaxed text-card-foreground/80">{children}</div>
+      <div className="mt-3 overflow-hidden text-sm leading-relaxed text-card-foreground/80 break-words">{children}</div>
     </div>
   );
 }
