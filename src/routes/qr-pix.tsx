@@ -79,6 +79,7 @@ function QrPixPage() {
   const [descricao, setDescricao] = useState("");
   const [txid, setTxid] = useState("");
   const [copiado, setCopiado] = useState(false);
+  const [gerado, setGerado] = useState(false);
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -89,7 +90,7 @@ function QrPixPage() {
 
   useEffect(() => {
     if (!canvasRef.current) return;
-    if (!payload) {
+    if (!payload || !gerado) {
       const ctx = canvasRef.current.getContext("2d");
       ctx?.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
       return;
@@ -100,7 +101,12 @@ function QrPixPage() {
       color: { dark: "#000000", light: "#ffffff" },
       errorCorrectionLevel: "M",
     });
-  }, [payload]);
+  }, [payload, gerado]);
+
+  const gerar = () => {
+    if (!chave.trim() || !nome.trim() || !cidade.trim()) return;
+    setGerado(true);
+  };
 
   const copiar = async () => {
     if (!payload) return;
@@ -202,50 +208,62 @@ function QrPixPage() {
                 className="w-full rounded-md border border-input bg-background px-4 py-3 text-sm text-foreground outline-none focus:ring-2 focus:ring-ring"
               />
             </Field>
+
+            <button
+              type="button"
+              onClick={gerar}
+              disabled={!chave.trim() || !nome.trim() || !cidade.trim()}
+              className="mt-2 rounded-md bg-black px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-neutral-800 disabled:cursor-not-allowed disabled:opacity-40"
+            >
+              Gerar QR Code
+            </button>
           </div>
 
           {/* Preview */}
           <div className="flex flex-col items-center">
-            <div className="rounded-xl border border-border bg-white p-6 shadow-sm">
-              <canvas ref={canvasRef} width={320} height={320} />
-              {!payload && (
-                <p className="mt-3 text-center text-xs text-neutral-500">
-                  Preencha chave, nome e cidade para gerar o QR Code
+            {gerado ? (
+              <>
+                <div className="rounded-xl border border-border bg-white p-6 shadow-sm">
+                  <canvas ref={canvasRef} width={320} height={320} />
+                </div>
+
+                <div className="mt-6 flex w-full max-w-sm flex-col gap-3">
+                  <button
+                    type="button"
+                    onClick={baixar}
+                    disabled={!payload}
+                    className="rounded-md bg-black px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-neutral-800 disabled:cursor-not-allowed disabled:opacity-40"
+                  >
+                    Baixar PNG
+                  </button>
+                  <button
+                    type="button"
+                    onClick={copiar}
+                    disabled={!payload}
+                    className="rounded-md border border-input bg-background px-4 py-3 text-sm font-medium text-foreground transition-colors hover:bg-accent disabled:cursor-not-allowed disabled:opacity-40"
+                  >
+                    {copiado ? "Copiado!" : "Copiar código Pix"}
+                  </button>
+                </div>
+
+                <div className="mt-6 w-full">
+                  <span className="text-xs uppercase tracking-[0.2em] text-foreground/50">
+                    Pix copia e cola
+                  </span>
+                  <textarea
+                    readOnly
+                    value={payload}
+                    rows={4}
+                    className="mt-2 w-full resize-none rounded-md border border-input bg-muted px-3 py-2 font-mono text-xs text-foreground"
+                    onFocus={(e) => e.currentTarget.select()}
+                  />
+                </div>
+              </>
+            ) : (
+              <div className="flex h-full min-h-[320px] w-full flex-col items-center justify-center rounded-xl border border-dashed border-border bg-muted/40 px-6 text-center">
+                <p className="text-sm text-foreground/60">
+                  Preencha os dados ao lado e clique em <strong>Gerar QR Code</strong> para visualizar o resultado.
                 </p>
-              )}
-            </div>
-
-            <div className="mt-6 flex w-full max-w-sm flex-col gap-3">
-              <button
-                type="button"
-                onClick={baixar}
-                disabled={!payload}
-                className="rounded-md bg-black px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-neutral-800 disabled:cursor-not-allowed disabled:opacity-40"
-              >
-                Baixar PNG
-              </button>
-              <button
-                type="button"
-                onClick={copiar}
-                disabled={!payload}
-                className="rounded-md border border-input bg-background px-4 py-3 text-sm font-medium text-foreground transition-colors hover:bg-accent disabled:cursor-not-allowed disabled:opacity-40"
-              >
-                {copiado ? "Copiado!" : "Copiar código Pix"}
-              </button>
-            </div>
-
-            {payload && (
-              <div className="mt-6 w-full">
-                <span className="text-xs uppercase tracking-[0.2em] text-foreground/50">
-                  Pix copia e cola
-                </span>
-                <textarea
-                  readOnly
-                  value={payload}
-                  rows={4}
-                  className="mt-2 w-full resize-none rounded-md border border-input bg-muted px-3 py-2 font-mono text-xs text-foreground"
-                  onFocus={(e) => e.currentTarget.select()}
-                />
               </div>
             )}
           </div>
