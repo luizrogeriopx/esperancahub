@@ -170,3 +170,9 @@
     color: var(--color-foreground);
   }
 }
+
+/* Mascarar o botão flutuante 'Edit With Lovable' */
+#lovable-badge {
+  display: none !important;
+}
+
