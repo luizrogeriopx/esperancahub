@@ -240,7 +240,7 @@ function PerfisPage() {
               <h3 className="text-sm font-bold uppercase tracking-wider text-red-800 dark:text-red-200">
                 Perfil Poluído
               </h3>
-              <div className="mt-4 space-y-2 text-sm text-red-900 dark:text-red-100">
+              <div className="mt-4 space-y-2 text-sm text-red-900 dark:text-red-100 [overflow-wrap:anywhere]">
                 <p><strong>@:</strong> assembleiadeusministerioesperancacentraloficial</p>
                 <p><strong>Nome:</strong> IGREJA EVANGÉLICA ASSEMBLEIA DE DEUS MINISTÉRIO ESPERANÇA CENTRAL</p>
               </div>
@@ -249,7 +249,7 @@ function PerfisPage() {
               <h3 className="text-sm font-bold uppercase tracking-wider text-green-800 dark:text-green-200">
                 Perfil Profissional
               </h3>
-              <div className="mt-4 space-y-2 text-sm text-green-900 dark:text-green-100">
+              <div className="mt-4 space-y-2 text-sm text-green-900 dark:text-green-100 [overflow-wrap:anywhere]">
                 <p><strong>@:</strong> esperancacentral</p>
                 <p><strong>Nome:</strong> IGREJA ESPERANÇA CENTRAL</p>
               </div>
