@@ -174,6 +174,19 @@ function Index() {
         </button>
       </form>
 
+      <div className="mt-3 flex items-center gap-2">
+        <input
+          id="sem-bairro"
+          type="checkbox"
+          checked={semBairro}
+          onChange={(e) => setSemBairro(e.target.checked)}
+          className="h-4 w-4 cursor-pointer rounded border border-input accent-primary"
+        />
+        <label htmlFor="sem-bairro" className="cursor-pointer text-sm text-foreground">
+          Sem nome do bairro
+        </label>
+      </div>
+
       <div className="mt-6 flex items-center gap-3">
         <label htmlFor="cor" className="text-sm text-foreground">
           Cor:
