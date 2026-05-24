@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SuporteRouteImport } from './routes/suporte'
 import { Route as QrPixRouteImport } from './routes/qr-pix'
 import { Route as PerfisRouteImport } from './routes/perfis'
 import { Route as PalavraRouteImport } from './routes/palavra'
@@ -17,6 +18,11 @@ import { Route as HorasRouteImport } from './routes/horas'
 import { Route as FontesRouteImport } from './routes/fontes'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SuporteRoute = SuporteRouteImport.update({
+  id: '/suporte',
+  path: '/suporte',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const QrPixRoute = QrPixRouteImport.update({
   id: '/qr-pix',
   path: '/qr-pix',
@@ -61,6 +67,7 @@ export interface FileRoutesByFullPath {
   '/palavra': typeof PalavraRoute
   '/perfis': typeof PerfisRoute
   '/qr-pix': typeof QrPixRoute
+  '/suporte': typeof SuporteRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -70,6 +77,7 @@ export interface FileRoutesByTo {
   '/palavra': typeof PalavraRoute
   '/perfis': typeof PerfisRoute
   '/qr-pix': typeof QrPixRoute
+  '/suporte': typeof SuporteRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -80,6 +88,7 @@ export interface FileRoutesById {
   '/palavra': typeof PalavraRoute
   '/perfis': typeof PerfisRoute
   '/qr-pix': typeof QrPixRoute
+  '/suporte': typeof SuporteRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -91,6 +100,7 @@ export interface FileRouteTypes {
     | '/palavra'
     | '/perfis'
     | '/qr-pix'
+    | '/suporte'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -100,6 +110,7 @@ export interface FileRouteTypes {
     | '/palavra'
     | '/perfis'
     | '/qr-pix'
+    | '/suporte'
   id:
     | '__root__'
     | '/'
@@ -109,6 +120,7 @@ export interface FileRouteTypes {
     | '/palavra'
     | '/perfis'
     | '/qr-pix'
+    | '/suporte'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -119,10 +131,18 @@ export interface RootRouteChildren {
   PalavraRoute: typeof PalavraRoute
   PerfisRoute: typeof PerfisRoute
   QrPixRoute: typeof QrPixRoute
+  SuporteRoute: typeof SuporteRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/suporte': {
+      id: '/suporte'
+      path: '/suporte'
+      fullPath: '/suporte'
+      preLoaderRoute: typeof SuporteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/qr-pix': {
       id: '/qr-pix'
       path: '/qr-pix'
@@ -183,6 +203,7 @@ const rootRouteChildren: RootRouteChildren = {
   PalavraRoute: PalavraRoute,
   PerfisRoute: PerfisRoute,
   QrPixRoute: QrPixRoute,
+  SuporteRoute: SuporteRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

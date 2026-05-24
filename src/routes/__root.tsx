@@ -149,6 +149,9 @@ function RootComponent() {
             <Link to="/qr-pix" activeProps={{ className: "text-foreground font-semibold" }}>
               QR Pix
             </Link>
+            <Link to="/suporte" activeProps={{ className: "text-foreground font-semibold" }}>
+              Suporte
+            </Link>
             <a
               href="https://drive.google.com/drive/folders/1L28VPBhgAkpigvydEdHbevr2wgJLeeKX?usp=sharing"
               target="_blank"
