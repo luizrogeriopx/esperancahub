@@ -78,7 +78,7 @@ function Index() {
           <button
             type="button"
             onClick={() => baixar(ref1.current, `igreja-esperanca-v1${nome ? "-" + nome.toLowerCase().replace(/\s+/g, "-") : ""}`)}
-            className="mt-4 rounded-md border border-input bg-background px-4 py-2 text-xs font-medium text-foreground transition-colors hover:bg-accent"
+            className="mt-4 rounded-md bg-black px-4 py-2 text-xs font-medium text-white transition-colors hover:bg-neutral-800"
           >
             Baixar PNG (alta resolução, fundo transparente)
           </button>
@@ -113,7 +113,7 @@ function Index() {
           <button
             type="button"
             onClick={() => baixar(ref2.current, `igreja-esperanca-v2${nome ? "-" + nome.toLowerCase().replace(/\s+/g, "-") : ""}`)}
-            className="mt-4 rounded-md border border-input bg-background px-4 py-2 text-xs font-medium text-foreground transition-colors hover:bg-accent"
+            className="mt-4 rounded-md bg-black px-4 py-2 text-xs font-medium text-white transition-colors hover:bg-neutral-800"
           >
             Baixar PNG (alta resolução, fundo transparente)
           </button>
@@ -146,7 +146,7 @@ function Index() {
           <button
             type="button"
             onClick={() => baixar(ref3.current, `igreja-esperanca-v3${nome ? "-" + nome.toLowerCase().replace(/\s+/g, "-") : ""}`)}
-            className="mt-4 rounded-md border border-input bg-background px-4 py-2 text-xs font-medium text-foreground transition-colors hover:bg-accent"
+            className="mt-4 rounded-md bg-black px-4 py-2 text-xs font-medium text-white transition-colors hover:bg-neutral-800"
           >
             Baixar PNG (alta resolução, fundo transparente)
           </button>
