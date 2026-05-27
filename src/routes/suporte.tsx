@@ -27,12 +27,6 @@ const lideres = [
     numeroFormatado: "(62) 98604-6808",
     funcao: "Líder Hope Creative",
   },
-  {
-    nome: "Lucas Garcia",
-    telefone: "62981402069",
-    numeroFormatado: "(62) 98140-2069",
-    funcao: "Líder Hope Creative",
-  },
 ];
 
 function SuportePage() {
