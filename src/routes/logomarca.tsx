@@ -52,8 +52,8 @@ function Index() {
     <main className="flex min-h-screen flex-col items-start overflow-x-hidden bg-background px-4 py-12 sm:px-6 sm:py-16">
       <div className="flex w-full max-w-5xl flex-col gap-16" style={{ color: cor }}>
         {/* Versão 1 — Centralizada */}
-        <section className="flex flex-col items-start text-left leading-none">
-          <span className="mb-3 text-xs uppercase tracking-[0.3em] text-foreground/50">
+        <section className="flex flex-col items-center text-center leading-none">
+          <span className="mb-3 self-start text-xs uppercase tracking-[0.3em] text-foreground/50">
             Versão 1 — Centralizada
           </span>
           <div ref={ref1} className="flex flex-col items-center w-fit p-4 preview-bg">
@@ -126,8 +126,8 @@ function Index() {
           <span className="mb-3 text-xs uppercase tracking-[0.3em] text-foreground/50">
             Versão 3 — Mesma linha
           </span>
-          <div ref={ref3} className="flex flex-col items-center w-fit p-4 preview-bg">
-          <h2 className="flex flex-wrap items-baseline gap-x-3 text-4xl sm:text-6xl md:text-7xl">
+          <div ref={ref3} className="flex flex-col items-start w-fit p-4 preview-bg">
+          <h2 className="flex flex-nowrap items-baseline gap-x-2 sm:gap-x-3 whitespace-nowrap text-2xl xs:text-3xl sm:text-6xl md:text-7xl">
             <span
               style={{ fontFamily: '"Nexa Book", sans-serif', letterSpacing: "0.08em" }}
             >
