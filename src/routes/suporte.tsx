@@ -29,8 +29,8 @@ const lideres = [
   },
   {
     nome: "Luiz Rogério",
-    telefone: "62982952728",
-    numeroFormatado: "(62) 98295-2728",
+    telefone: "62996897483",
+    numeroFormatado: "(62) 99689-7483",
     funcao: "DESIGN/DESENVOLVEDOR",
   },
 ];
