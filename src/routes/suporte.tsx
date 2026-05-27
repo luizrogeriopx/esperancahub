@@ -27,6 +27,12 @@ const lideres = [
     numeroFormatado: "(62) 98604-6808",
     funcao: "Líder Hope Creative",
   },
+  {
+    nome: "Luiz Rogério",
+    telefone: "62982952728",
+    numeroFormatado: "(62) 98295-2728",
+    funcao: "DESIGN/DESENVOLVEDOR",
+  },
 ];
 
 function SuportePage() {
