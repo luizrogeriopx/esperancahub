@@ -34,6 +34,77 @@ function removerAcentos(s: string) {
   return s.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
 
+function validarCPF(cpf: string): boolean {
+  if (cpf.length !== 11 || /^(\d)\1+$/.test(cpf)) return false;
+  let soma = 0;
+  let resto;
+  for (let i = 1; i <= 9; i++) soma += parseInt(cpf.substring(i - 1, i)) * (11 - i);
+  resto = (soma * 10) % 11;
+  if (resto === 10 || resto === 11) resto = 0;
+  if (resto !== parseInt(cpf.substring(9, 10))) return false;
+  soma = 0;
+  for (let i = 1; i <= 10; i++) soma += parseInt(cpf.substring(i - 1, i)) * (12 - i);
+  resto = (soma * 10) % 11;
+  if (resto === 10 || resto === 11) resto = 0;
+  if (resto !== parseInt(cpf.substring(10, 11))) return false;
+  return true;
+}
+
+function normalizarChavePix(chave: string): string {
+  const limpa = chave.trim();
+  
+  // E-mail
+  if (limpa.includes("@")) {
+    return limpa.toLowerCase();
+  }
+  
+  // Chave aleatória (UUID)
+  const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(limpa);
+  if (isUuid) {
+    return limpa.toLowerCase();
+  }
+  
+  const apenasNumeros = limpa.replace(/\D/g, "");
+  
+  // Se começar com + de telefone
+  if (limpa.startsWith("+")) {
+    return `+${apenasNumeros}`;
+  }
+  
+  // Se já tiver DDI 55
+  if (apenasNumeros.startsWith("55") && (apenasNumeros.length === 12 || apenasNumeros.length === 13)) {
+    return `+${apenasNumeros}`;
+  }
+  
+  // CPF (11 dígitos válidos) ou telefone (11 dígitos sem +55)
+  if (apenasNumeros.length === 11) {
+    if (validarCPF(apenasNumeros)) {
+      return apenasNumeros;
+    }
+    return `+55${apenasNumeros}`;
+  }
+  
+  // Telefone fixo/celular sem DDI (10 dígitos)
+  if (apenasNumeros.length === 10) {
+    return `+55${apenasNumeros}`;
+  }
+  
+  // CNPJ
+  if (apenasNumeros.length === 14) {
+    return apenasNumeros;
+  }
+  
+  return limpa;
+}
+
+function limparTexto(s: string) {
+  return removerAcentos(s).replace(/[^a-zA-Z0-9 ]/g, "");
+}
+
+function limparNomeCidade(s: string) {
+  return limparTexto(s).toUpperCase();
+}
+
 function buildPixPayload(opts: {
   chave: string;
   nome: string;
@@ -42,15 +113,15 @@ function buildPixPayload(opts: {
   txid?: string;
   descricao?: string;
 }) {
-  const chave = opts.chave.trim();
-  const nome = removerAcentos(opts.nome.trim()).slice(0, 25) || "NOME";
-  const cidade = removerAcentos(opts.cidade.trim()).slice(0, 15) || "CIDADE";
+  const chave = normalizarChavePix(opts.chave);
+  const nome = limparNomeCidade(opts.nome).slice(0, 25) || "NOME";
+  const cidade = limparNomeCidade(opts.cidade).slice(0, 15) || "CIDADE";
   const txid = (opts.txid?.trim() || "***").slice(0, 25);
 
   // Merchant Account Info (id 26)
   const gui = tlv("00", "BR.GOV.BCB.PIX");
   const key = tlv("01", chave);
-  const desc = opts.descricao?.trim() ? tlv("02", removerAcentos(opts.descricao.trim()).slice(0, 50)) : "";
+  const desc = opts.descricao?.trim() ? tlv("02", limparTexto(opts.descricao).slice(0, 50)) : "";
   const mai = tlv("26", gui + key + desc);
 
   let payload =
