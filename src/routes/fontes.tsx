@@ -1,4 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
+import montserratExtraBold from "@/assets/Montserrat-ExtraBold.ttf.asset.json";
+import montserratRegular from "@/assets/Montserrat-Regular.ttf.asset.json";
 
 export const Route = createFileRoute("/fontes")({
   component: Fontes,
@@ -13,23 +15,6 @@ export const Route = createFileRoute("/fontes")({
   }),
 });
 
-const fontes = [
-  {
-    nome: "Nexa Heavy",
-    descricao: "Peso forte — usada nas palavras de destaque.",
-    arquivo: "/fonts/Nexa-Heavy.ttf",
-    nomeArquivo: "Nexa-Heavy.ttf",
-    fontFamily: '"Nexa Heavy", sans-serif',
-  },
-  {
-    nome: "Nexa Book",
-    descricao: "Peso leve — usada em textos secundários.",
-    arquivo: "/fonts/Nexa-Trial-Book.otf",
-    nomeArquivo: "Nexa-Trial-Book.otf",
-    fontFamily: '"Nexa Book", sans-serif',
-  },
-];
-
 function Fontes() {
   return (
     <main className="flex min-h-[calc(100vh-65px)] flex-col items-start overflow-x-hidden bg-background px-4 py-12 sm:px-6 sm:py-16">
@@ -41,42 +26,40 @@ function Fontes() {
         </p>
 
         <div className="mt-16 flex flex-col gap-16">
-          {/* Nexa Heavy */}
           <section className="flex flex-col gap-4">
             <div className="flex flex-col gap-1">
               <p
                 className="text-3xl sm:text-7xl md:text-8xl text-foreground break-words"
-                style={{ fontFamily: '"Nexa Heavy", sans-serif', letterSpacing: "0.02em" }}
+                style={{ fontFamily: '"Montserrat ExtraBold", sans-serif', letterSpacing: "0.02em" }}
               >
-                NEXA HEAVY
+                MONTSERRAT EXTRABOLD
               </p>
               <p className="text-sm text-foreground/60">Peso forte — usada nas palavras de destaque</p>
-              <p className="text-xs text-foreground/40">Nexa-Heavy.ttf</p>
+              <p className="text-xs text-foreground/40">Montserrat-ExtraBold.ttf</p>
             </div>
             <a
-              href="/fonts/Nexa-Heavy.ttf"
-              download="Nexa-Heavy.ttf"
+              href={montserratExtraBold.url}
+              download="Montserrat-ExtraBold.ttf"
               className="inline-flex w-fit items-center justify-center rounded-md bg-black px-4 py-2 text-xs font-medium text-white transition-colors hover:bg-neutral-800"
             >
               Baixar
             </a>
           </section>
 
-          {/* Nexa Book */}
           <section className="flex flex-col gap-4">
             <div className="flex flex-col gap-1">
               <p
                 className="text-2xl sm:text-6xl md:text-7xl text-foreground break-words"
-                style={{ fontFamily: '"Nexa Book", sans-serif', letterSpacing: "0.2em" }}
+                style={{ fontFamily: '"Montserrat Regular", sans-serif', letterSpacing: "0.2em" }}
               >
-                NEXA BOOK
+                MONTSERRAT REGULAR
               </p>
               <p className="text-sm text-foreground/60">Peso leve — usada em textos secundários</p>
-              <p className="text-xs text-foreground/40">Nexa-Trial-Book.otf</p>
+              <p className="text-xs text-foreground/40">Montserrat-Regular.ttf</p>
             </div>
             <a
-              href="/fonts/Nexa-Trial-Book.otf"
-              download="Nexa-Trial-Book.otf"
+              href={montserratRegular.url}
+              download="Montserrat-Regular.ttf"
               className="inline-flex w-fit items-center justify-center rounded-md bg-black px-4 py-2 text-xs font-medium text-white transition-colors hover:bg-neutral-800"
             >
               Baixar
@@ -155,7 +138,7 @@ function Fontes() {
                 <li>Faça login com a mesma conta que você usa no app Canva.</li>
                 <li>
                   Toque em <strong>Enviar uma fonte</strong> e selecione os arquivos baixados
-                  (Nexa-Heavy.ttf e Nexa-Trial-Book.otf).
+                  (Montserrat-ExtraBold.ttf e Montserrat-Regular.ttf).
                 </li>
                 <li>Confirme que você tem permissão de uso e finalize o envio.</li>
                 <li>
