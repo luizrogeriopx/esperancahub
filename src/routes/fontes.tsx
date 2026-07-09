@@ -143,7 +143,7 @@ function Fontes() {
                 <li>Confirme que você tem permissão de uso e finalize o envio.</li>
                 <li>
                   Abra o app Canva, edite qualquer design, toque em <strong>Texto</strong> e depois
-                  em <strong>Fonte</strong>. As fontes Nexa aparecerão na lista da sua marca.
+                  em <strong>Fonte</strong>. As fontes Montserrat aparecerão na lista da sua marca.
                 </li>
               </ol>
               <p className="mt-4 text-xs text-foreground/50">
