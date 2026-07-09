@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import montserratExtraBold from "@/assets/Montserrat-ExtraBold.ttf.asset.json";
 import nexaExtraLight from "@/assets/Nexa-ExtraLight.ttf.asset.json";
 
-
 export const Route = createFileRoute("/fontes")({
   component: Fontes,
   head: () => ({
@@ -66,7 +65,6 @@ function Fontes() {
               Baixar
             </a>
           </section>
-
         </div>
 
         <section className="mt-20 flex flex-col gap-10">
