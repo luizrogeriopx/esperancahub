@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import montserratExtraBold from "@/assets/Montserrat-ExtraBold.ttf.asset.json";
-import montserratRegular from "@/assets/Montserrat-Regular.ttf.asset.json";
+import nexaExtraLight from "@/assets/Nexa-ExtraLight.ttf.asset.json";
+
 
 export const Route = createFileRoute("/fontes")({
   component: Fontes,
@@ -50,21 +51,22 @@ function Fontes() {
             <div className="flex flex-col gap-1">
               <p
                 className="text-2xl sm:text-6xl md:text-7xl text-foreground break-words"
-                style={{ fontFamily: '"Montserrat Regular", sans-serif', letterSpacing: "0.2em" }}
+                style={{ fontFamily: '"Nexa ExtraLight", sans-serif', letterSpacing: "0.2em" }}
               >
-                MONTSERRAT REGULAR
+                NEXA EXTRALIGHT
               </p>
               <p className="text-sm text-foreground/60">Peso leve — usada em textos secundários</p>
-              <p className="text-xs text-foreground/40">Montserrat-Regular.ttf</p>
+              <p className="text-xs text-foreground/40">Nexa-ExtraLight.ttf</p>
             </div>
             <a
-              href={montserratRegular.url}
-              download="Montserrat-Regular.ttf"
+              href={nexaExtraLight.url}
+              download="Nexa-ExtraLight.ttf"
               className="inline-flex w-fit items-center justify-center rounded-md bg-black px-4 py-2 text-xs font-medium text-white transition-colors hover:bg-neutral-800"
             >
               Baixar
             </a>
           </section>
+
         </div>
 
         <section className="mt-20 flex flex-col gap-10">
@@ -138,13 +140,14 @@ function Fontes() {
                 <li>Faça login com a mesma conta que você usa no app Canva.</li>
                 <li>
                   Toque em <strong>Enviar uma fonte</strong> e selecione os arquivos baixados
-                  (Montserrat-ExtraBold.ttf e Montserrat-Regular.ttf).
+                  (Montserrat-ExtraBold.ttf e Nexa-ExtraLight.ttf).
                 </li>
                 <li>Confirme que você tem permissão de uso e finalize o envio.</li>
                 <li>
                   Abra o app Canva, edite qualquer design, toque em <strong>Texto</strong> e depois
-                  em <strong>Fonte</strong>. As fontes Montserrat aparecerão na lista da sua marca.
+                  em <strong>Fonte</strong>. As fontes Montserrat e Nexa aparecerão na lista da sua marca.
                 </li>
+
               </ol>
               <p className="mt-4 text-xs text-foreground/50">
                 Dica: se não tiver Canva Pro, instale as fontes no computador e crie modelos com elas
