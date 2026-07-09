@@ -20,7 +20,6 @@ function Index() {
   const [bairro, setBairro] = useState("");
   const [nome, setNome] = useState("");
   const [cor, setCor] = useState("#000000");
-  const [semBairro, setSemBairro] = useState(false);
 
   const ref1 = useRef<HTMLDivElement>(null);
   const ref2 = useRef<HTMLDivElement>(null);
@@ -71,15 +70,13 @@ function Index() {
               ESPERANÇA
             </span>
           </h2>
-          {!semBairro && (
-            <p className="mt-3 text-base sm:text-lg uppercase tracking-[0.2em]">
-              {nome || "DIGITE O NOME DO BAIRRO"}
-            </p>
-          )}
+          <p className="mt-3 text-base sm:text-lg uppercase tracking-[0.2em]">
+            {nome || "DIGITE O NOME DO BAIRRO"}
+          </p>
           </div>
           <button
             type="button"
-            onClick={() => baixar(ref1.current, `igreja-esperanca-v1${nome && !semBairro ? "-" + nome.toLowerCase().replace(/\s+/g, "-") : ""}`)}
+            onClick={() => baixar(ref1.current, `igreja-esperanca-v1${nome ? "-" + nome.toLowerCase().replace(/\s+/g, "-") : ""}`)}
             className="mt-4 rounded-md bg-black px-4 py-2 text-xs font-medium text-white transition-colors hover:bg-neutral-800"
           >
             Baixar PNG (alta resolução, fundo transparente)
@@ -106,15 +103,13 @@ function Index() {
               ESPERANÇA
             </span>
           </h2>
-          {!semBairro && (
-            <p className="mt-3 text-base sm:text-lg uppercase tracking-[0.2em]">
-              {nome || "DIGITE O NOME DO BAIRRO"}
-            </p>
-          )}
+          <p className="mt-3 text-base sm:text-lg uppercase tracking-[0.2em]">
+            {nome || "DIGITE O NOME DO BAIRRO"}
+          </p>
           </div>
           <button
             type="button"
-            onClick={() => baixar(ref2.current, `igreja-esperanca-v2${nome && !semBairro ? "-" + nome.toLowerCase().replace(/\s+/g, "-") : ""}`)}
+            onClick={() => baixar(ref2.current, `igreja-esperanca-v2${nome ? "-" + nome.toLowerCase().replace(/\s+/g, "-") : ""}`)}
             className="mt-4 rounded-md bg-black px-4 py-2 text-xs font-medium text-white transition-colors hover:bg-neutral-800"
           >
             Baixar PNG (alta resolução, fundo transparente)
@@ -126,8 +121,8 @@ function Index() {
           <span className="mb-3 text-xs uppercase tracking-[0.3em] text-foreground/50">
             Versão 3 — Mesma linha
           </span>
-          <div ref={ref3} className="flex flex-col items-start w-fit p-4 preview-bg">
-          <h2 className="flex flex-nowrap items-baseline gap-x-2 sm:gap-x-3 whitespace-nowrap text-2xl xs:text-3xl sm:text-6xl md:text-7xl">
+          <div ref={ref3} className="flex flex-col items-center w-fit p-4 preview-bg">
+          <h2 className="flex flex-wrap items-baseline gap-x-3 text-4xl sm:text-6xl md:text-7xl">
             <span
               style={{ fontFamily: '"Nexa Book", sans-serif', letterSpacing: "0.08em" }}
             >
@@ -139,15 +134,13 @@ function Index() {
               ESPERANÇA
             </span>
           </h2>
-          {!semBairro && (
-            <p className="mt-3 text-base sm:text-lg uppercase tracking-[0.2em]">
-              {nome || "DIGITE O NOME DO BAIRRO"}
-            </p>
-          )}
+          <p className="mt-3 text-base sm:text-lg uppercase tracking-[0.2em]">
+            {nome || "DIGITE O NOME DO BAIRRO"}
+          </p>
           </div>
           <button
             type="button"
-            onClick={() => baixar(ref3.current, `igreja-esperanca-v3${nome && !semBairro ? "-" + nome.toLowerCase().replace(/\s+/g, "-") : ""}`)}
+            onClick={() => baixar(ref3.current, `igreja-esperanca-v3${nome ? "-" + nome.toLowerCase().replace(/\s+/g, "-") : ""}`)}
             className="mt-4 rounded-md bg-black px-4 py-2 text-xs font-medium text-white transition-colors hover:bg-neutral-800"
           >
             Baixar PNG (alta resolução, fundo transparente)
@@ -173,19 +166,6 @@ function Index() {
           Aplicar
         </button>
       </form>
-
-      <div className="mt-3 flex items-center gap-2">
-        <input
-          id="sem-bairro"
-          type="checkbox"
-          checked={semBairro}
-          onChange={(e) => setSemBairro(e.target.checked)}
-          className="h-4 w-4 cursor-pointer rounded border border-input accent-primary"
-        />
-        <label htmlFor="sem-bairro" className="cursor-pointer text-sm text-foreground">
-          Sem nome do bairro
-        </label>
-      </div>
 
       <div className="mt-6 flex items-center gap-3">
         <label htmlFor="cor" className="text-sm text-foreground">
