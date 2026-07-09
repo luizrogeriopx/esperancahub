@@ -17,17 +17,17 @@
 }
 
 @font-face {
-  font-family: "Nexa Book";
-  src: url("/fonts/Nexa-Trial-Book.otf") format("opentype");
+  font-family: "Montserrat Regular";
+  src: url("/__l5e/assets-v1/937b7dc8-178b-4ea4-8149-afa2df10bc45/Montserrat-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Nexa Heavy";
-  src: url("/fonts/Nexa-Heavy.ttf") format("truetype");
-  font-weight: 900;
+  font-family: "Montserrat ExtraBold";
+  src: url("/__l5e/assets-v1/376c6a6d-60ef-4c7f-8db2-7e1c55977c16/Montserrat-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
   font-style: normal;
   font-display: swap;
 }
